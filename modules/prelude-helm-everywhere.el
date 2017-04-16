@@ -53,12 +53,12 @@
 (define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
 
 ;; shell history.
-(define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
+;; (define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
 
 ;; use helm to list eshell history
-(add-hook 'eshell-mode-hook
-          #'(lambda ()
-              (substitute-key-definition 'eshell-list-history 'helm-eshell-history eshell-mode-map)))
+;; (add-hook 'eshell-mode-hook
+          ;; #'(lambda ()
+              ;; (substitute-key-definition 'eshell-list-history 'helm-eshell-history eshell-mode-map)))
 
 (substitute-key-definition 'find-tag 'helm-etags-select global-map)
 (setq projectile-completion-system 'helm)
