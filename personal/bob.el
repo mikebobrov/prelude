@@ -12,6 +12,8 @@
 ;; (prelude-require-package 'robe)
 ;; (prelude-require-package 'helm-robe)
 (prelude-require-package 'ggtags)
+(prelude-require-package 'multiple-cursors)
+(prelude-require-package 'plantuml-mode)
 
 (setq tramp-default-method "ssh")
 
@@ -34,3 +36,7 @@
 
 (set-face-attribute 'default nil :height 130 :font "Operator Mono")
 (set-frame-font "Operator Mono" nil t)
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
